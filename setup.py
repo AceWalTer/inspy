@@ -13,7 +13,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='inspy',  # 包名
-    version='0.1.0',  # 包的版本
+    version='0.1.1',  # 包的版本
     author='Yafei Wang',  # 作者名字
     author_email='yafei.wang@pisemi.com',  # 作者邮箱
     description='scan and control for instrument that support SCPI COMMAND',  # 简短描述
@@ -23,7 +23,7 @@ setup(
     packages=find_packages(),  # 自动找到项目中的所有包
     install_requires=[
         # 这里列出了项目的依赖
-        'pyvsia>=1.12.0',
+        'pyvisa>=1.12.0',
         'colorama~=0.4.6',
         'setuptools~=68.0.0'
     ],
