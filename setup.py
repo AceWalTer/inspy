@@ -19,7 +19,7 @@ setup(
     description='scan and control for instrument that support SCPI COMMAND',  # 简短描述
     long_description=open('README.md').read(),  # 长描述，通常是README
     long_description_content_type='text/markdown',  # 长描述的类型，这里是markdown
-    url='https://github.com/yourusername/your_package',  # 项目主页
+    url='https://github.com/AceWalTer/inspy',  # 项目主页
     packages=find_packages(),  # 自动找到项目中的所有包
     install_requires=[
         # 这里列出了项目的依赖
