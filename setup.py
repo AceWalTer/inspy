@@ -13,7 +13,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='inspy',  # 包名
-    version='0.1.1',  # 包的版本
+    version='0.1.3',  # 包的版本
     author='Yafei Wang',  # 作者名字
     author_email='yafei.wang@pisemi.com',  # 作者邮箱
     description='scan and control for instrument that support SCPI COMMAND',  # 简短描述
@@ -21,6 +21,7 @@ setup(
     long_description_content_type='text/markdown',  # 长描述的类型，这里是markdown
     url='https://github.com/AceWalTer/inspy',  # 项目主页
     packages=find_packages(),  # 自动找到项目中的所有包
+    include_package_data=True,
     install_requires=[
         # 这里列出了项目的依赖
         'pyvisa>=1.12.0',
