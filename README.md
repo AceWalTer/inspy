@@ -1,6 +1,6 @@
 inspy is a package that can automatically scan and control instruments which are supported SCPI COMMAND
 
-version 0.1.3 supported DMM SMU Electronic Load and Power Suppy include( RUGOL: DP821A, DP831A, DL3021A GWINSTEK: GDM-9061, GDM-9060, GPP-6030 Keysight: 34461A Keithley: 2450, 2460)
+version 0.1.4 supported DMM SMU Electronic Load and Power Suppy include( RUGOL: DP821A, DP831A, DL3021A GWINSTEK: GDM-9061, GDM-9060, GPP-6030 Keysight: 34461A Keithley: 2450, 2460)
 
 usage:
     1. creat a pyvia ResourceManager (rm = pyvisa.ResourceManager())

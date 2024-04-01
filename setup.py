@@ -13,7 +13,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='inspy',  # 包名
-    version='0.1.3',  # 包的版本
+    version='0.1.4',  # 包的版本
     author='Yafei Wang',  # 作者名字
     author_email='yafei.wang@pisemi.com',  # 作者邮箱
     description='scan and control for instrument that support SCPI COMMAND',  # 简短描述
