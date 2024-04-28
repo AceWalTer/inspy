@@ -13,10 +13,10 @@ from setuptools import setup, find_packages
 
 setup(
     name='inspy',  # 包名
-    version='0.1.5',  # 包的版本
+    version='0.1.6',  # 包的版本
     author='Yafei Wang',  # 作者名字
     author_email='yafei.wang@pisemi.com',  # 作者邮箱
-    description='scan and control for instrument that support SCPI COMMAND',  # 简短描述
+    description='scan and control for instrument that support SCPI COMMAND added 34461A',  # 简短描述
     long_description=open('README.md').read(),  # 长描述，通常是README
     long_description_content_type='text/markdown',  # 长描述的类型，这里是markdown
     url='https://github.com/AceWalTer/inspy',  # 项目主页

@@ -24,6 +24,8 @@ if __name__ == '__main__':
     if pi_dmm_list is not None:
         for i in pi_dmm_list:
             print(i)
+            if i.pInsName == "34461":
+                print(i.dmm_ins_read())
     else:
         del pi_dmm_list
     if pi_smu_list is not None:

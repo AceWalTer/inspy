@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: inspy
-Version: 0.1.5
-Summary: scan and control for instrument that support SCPI COMMAND
+Version: 0.1.6
+Summary: scan and control for instrument that support SCPI COMMAND added 34461A
 Home-page: https://github.com/AceWalTer/inspy
 Author: Yafei Wang
 Author-email: yafei.wang@pisemi.com

@@ -12,6 +12,7 @@
 import time
 from functools import wraps
 from .ins_function import *
+from log import *
 
 
 class PiIns:
@@ -37,6 +38,8 @@ class PiIns:
             self.err = 1
         if self.err == 0:
             self.command = register_function(self.pInsType, self.pInsName)
+        else:
+            log_print("ERROR", "fail to register")
 
     def __str__(self):
         return self.pInsType + " " + self.pInsName + " " + self.pInsID + " " + str(self.index)

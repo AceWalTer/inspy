@@ -8,6 +8,15 @@
       "trig": "TRIG:SOUR {TRIG}",
       "range": "SENS:{MODE}:{TYPE}:RANG {RANGE}",
       "read": "READ?"
+    },
+    "34461": {
+      "register": "*IDN?",
+      "reset": "*RST",
+      "conf": "CONF:{MODE}:{TYPE}",
+      "samp": "SAMP:COUN {COUNT}",
+      "trig": "TRIG:SOUR {TRIG}",
+      "range": "SENS:{MODE}:{TYPE}:RANG {RANGE}",
+      "read": "READ?"
     }
   },
   "POWER": {
