@@ -11,7 +11,7 @@
 """
 
 import json
-import pkg_resources
+import importlib.resources
 
 def register_function(pInsType, pInsName):
     """
@@ -21,16 +21,9 @@ def register_function(pInsType, pInsName):
     :return: command
     """
 
-    # Use pkg_resources to get the path to the JSON file
+    # Use importlib.resources to get the path to the JSON file
     try:
-        json_file = pkg_resources.resource_filename(__name__, 'ins.json')
-    except Exception as e:
-        print(f"Error locating JSON file: {e}")
-        return None
-
-    # Read and parse the JSON file
-    try:
-        with open(json_file, 'r') as f:
+        with importlib.resources.open_text(__package__, 'ins.json') as f:
             command = json.load(f)
     except FileNotFoundError:
         print("JSON file not found.")
