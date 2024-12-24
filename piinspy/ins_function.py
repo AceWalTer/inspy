@@ -11,8 +11,7 @@
 """
 
 import json
-import os
-
+import pkg_resources
 
 def register_function(pInsType, pInsName):
     """
@@ -22,22 +21,30 @@ def register_function(pInsType, pInsName):
     :return: command
     """
 
-    # Get the path of the current file
-    current_file = os.path.realpath(__file__)
-
-    # Get the directory containing the current file
-    current_dir = os.path.dirname(current_file)
-
-    # Construct the path to the JSON file
-    json_file = os.path.join(current_dir, 'ins.json')
+    # Use pkg_resources to get the path to the JSON file
+    try:
+        json_file = pkg_resources.resource_filename(__name__, 'ins.json')
+    except Exception as e:
+        print(f"Error locating JSON file: {e}")
+        return None
 
     # Read and parse the JSON file
-    with open(json_file, 'r') as f:
-        command = json.load(f)
+    try:
+        with open(json_file, 'r') as f:
+            command = json.load(f)
+    except FileNotFoundError:
+        print("JSON file not found.")
+        return None
+    except json.JSONDecodeError:
+        print("Error decoding JSON file.")
+        return None
 
-    for i in command.keys():
-        if pInsType == i:
-            for j in command[i].keys():
-                if pInsName[:3] in j:
-                    print(command[i][j])
-                    return command[i][j]
+    # Find and return the command
+    if pInsType in command:
+        for j in command[pInsType]:
+            if pInsName.startswith(j[:3]):
+                print(command[pInsType][j])
+                return command[pInsType][j]
+
+    print("No matching command found.")
+    return None

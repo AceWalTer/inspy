@@ -12,7 +12,7 @@
 import time
 from functools import wraps
 from .ins_function import *
-from log import *
+from .log import *
 
 
 class PiIns:
