@@ -26,11 +26,11 @@ def ins_scan(pInsrm):
         if "::0::" in i or "ASRL3::INSTR" in i or "ASRL4::INSTR" in i:
             pass
         else:
-            # print("scan", i)
-            ins = pInsrm.open_resource(i)
-            ins.read_termination = "\n"
-            ins.timeout = 5000
             try:
+                print("scan", i)
+                ins = pInsrm.open_resource(i)
+                ins.read_termination = "\n"
+                ins.timeout = 5000
                 try:
                     ins_info = ins.query("*IDN?")
                 except Exception as e:
@@ -40,7 +40,6 @@ def ins_scan(pInsrm):
                         if j in str(ins_info):
                             print(k, j, i, ins_info)
                             ins_visa_dict.update({i: {k: j}})
-
                 ins.close()
             except Exception as result:
                 print(result)

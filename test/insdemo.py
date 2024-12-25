@@ -15,6 +15,7 @@ from piinspy import *
 if __name__ == '__main__':
 
     rm = pyvisa.ResourceManager()
+    # dmm = PiIns(rm, "DMM", "9060", "USB0::0x2184::0x0059::GEW912422::INSTR")
     pi_power_list, pi_dmm_list, pi_smu_list, pi_Load_list = ins_scan(rm)
     if pi_power_list is not None:
         for i in pi_power_list:
