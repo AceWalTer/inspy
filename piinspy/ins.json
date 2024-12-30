@@ -35,7 +35,7 @@
       "measure": ":MEASure:{TYPE}? CH{CH}",
       "setchvol": ":SOURce{CH}:VOLTage {VOLT}",
       "setchcur": ":SOURce{CH}:CURRent {CURR}",
-      "outputstate": ":OUTPut {CH},{STATE}"
+      "outputstate": ":OUTPut CH{CH},{STATE}"
     },
     "DP821": {
       "register": "*IDN?",
@@ -43,7 +43,7 @@
       "measure": ":MEASure:{TYPE}? CH{CH}",
       "setchvol": ":SOURce{CH}:VOLTage {VOLT}",
       "setchcur": ":SOURce{CH}:CURRent {CURR}",
-      "outputstate": ":OUTPut {CH},{STATE}"
+      "outputstate": ":OUTPut CH{CH},{STATE}"
     }
   },
   "LOAD": {

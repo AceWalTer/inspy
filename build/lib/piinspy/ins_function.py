@@ -12,6 +12,7 @@
 
 import json
 import os
+import importlib.resources
 
 
 def register_function(pInsType, pInsName):
@@ -22,18 +23,31 @@ def register_function(pInsType, pInsName):
     :return: command
     """
 
-    # Get the path of the current file
-    current_file = os.path.realpath(__file__)
+    # # Get the path of the current file
+    # current_file = os.path.realpath(__file__)
+    #
+    # # Get the directory containing the current file
+    # current_dir = os.path.dirname(current_file)
+    #
+    # # Construct the path to the JSON file
+    # json_file = os.path.join(current_dir, 'ins.json')
+    #
+    # # Read and parse the JSON file
+    # with open(json_file, 'r') as f:
+    #     command1 = json.load(f)
 
-    # Get the directory containing the current file
-    current_dir = os.path.dirname(current_file)
+    try:
+        with importlib.resources.open_text(__package__, 'ins.json') as f:
+            command = json.load(f)
+    except FileNotFoundError:
+        print("JSON file not found.")
+        return None
+    except json.JSONDecodeError:
+        print("Error decoding JSON file.")
+        return None
 
-    # Construct the path to the JSON file
-    json_file = os.path.join(current_dir, 'ins.json')
-
-    # Read and parse the JSON file
-    with open(json_file, 'r') as f:
-        command = json.load(f)
+    # print(command1)
+    # print(command)
 
     for i in command.keys():
         if pInsType == i:
@@ -41,3 +55,6 @@ def register_function(pInsType, pInsName):
                 if pInsName[:3] in j:
                     print(command[i][j])
                     return command[i][j]
+
+    print("No matching instrument found.")
+    return None

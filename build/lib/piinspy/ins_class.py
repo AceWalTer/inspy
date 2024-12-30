@@ -45,10 +45,10 @@ class PiIns:
         return self.pInsType + " " + self.pInsName + " " + self.pInsID + " " + str(self.index)
 
     def write_cmd(self, pStr):
-        print(self.ins.write(pStr))
+        self.ins.write(pStr)
 
     def query_cmd(self, pStr):
-        print(self.ins.query(pStr))
+       return self.ins.query(pStr)
 
     """************************** POWER FUNCs **************************************************"""
 

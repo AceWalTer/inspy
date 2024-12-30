@@ -90,10 +90,11 @@ class PiIns:
         :param pState:power output state
         :return: None
         """
-        if self.pInsName == "831A" or self.pInsName == "821A":
-            ch = "CH%d" % pCh
-        else:
-            ch = pCh
+        # if self.pInsName == "831A" or self.pInsName == "821A":
+        #     ch = "CH%d" % pCh
+        # else:
+        #     ch = pCh
+        ch = pCh
         time.sleep(0.5)
         self.ins.write(self.command["outputstate"].format(CH=ch, STATE=pState))
 

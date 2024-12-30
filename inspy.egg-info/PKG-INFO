@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: inspy
-Version: 0.1.8
+Version: 0.1.9
 Summary: scan and control for instrument that support SCPI COMMAND added 34461A
 Home-page: https://github.com/AceWalTer/inspy
 Author: Yafei Wang
@@ -13,6 +13,9 @@ Classifier: Programming Language :: Python :: 3.7
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: pyvisa>=1.12.0
+Requires-Dist: colorama~=0.4.6
+Requires-Dist: setuptools~=68.0.0
 
 # inspy package
 inspy is a package that can automatically scan and control instruments which are supported SCPI COMMAND
