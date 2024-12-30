@@ -55,3 +55,6 @@ def register_function(pInsType, pInsName):
                 if pInsName[:3] in j:
                     print(command[i][j])
                     return command[i][j]
+
+    print("No matching instrument found.")
+    return None
